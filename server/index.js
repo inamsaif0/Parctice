@@ -1,3 +1,5 @@
+const express = require("express");
+
 // Import modules or libraries
 // const http = require('http');
 
@@ -8,9 +10,15 @@
 // });
 
 // Define the port the server will listen on
+const app = express();
+
 const port = process.env.PORT || 3000;
 
+app.get('/data', async (req, res) => {
+    res.send('hello world')
+})
+
 // Start the server
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
