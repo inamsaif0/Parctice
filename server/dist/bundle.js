@@ -1,0 +1,1 @@
+(()=>{const e=process.env.PORT||3e3;server.listen(e,(()=>{console.log(`Server is running on http://localhost:${e}`)}))})();
