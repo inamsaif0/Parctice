@@ -1,18 +1,23 @@
-// webpack.config.js
 const path = require('path');
 
 module.exports = {
-  entry: './index.js',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
+  // Your existing Webpack configuration
+
+  target: 'node', // Add this line to target Node.js environment
+
   resolve: {
-    fallback: {
-      util: require.resolve("util/"),
-      path: require.resolve("path-browserify"),
-      url: require.resolve("url/"),
-    },
+    extensions: ['.js'],
   },
-  
+  entry: {
+    // Your entry point(s)
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+  },
+  module: {
+    rules: [
+      // Your module rules
+    ],
+  },
 };
